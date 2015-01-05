@@ -2,7 +2,7 @@
 
 <project name="name-of-project" default="build">
  <target name="build"
-   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit"/>
+   depends="prepare,lint,phploc,pdepend,phpunit,phpcpd"/>
 
  <target name="build-parallel"
    depends="prepare,lint,tools-parallel,phpunit"/>
@@ -52,8 +52,7 @@
  </target>
 
  <target name="phploc" description="Measure project size using PHPLOC">
-  <exec executable="cmd">
-  <!--<exec executable="phploc">-->
+  <exec executable="${basedir}/vendor/bin/phploc.bat">
    <arg value="--log-xml" />
    <arg value="${basedir}/build/logs/phploc.xml" />
    <arg path="${basedir}/src" />
@@ -61,7 +60,7 @@
  </target>
 
  <target name="pdepend" description="Calculate software metrics using PHP_Depend">
-  <exec executable="cmd">
+  <exec executable="${basedir}/vendor/bin/pdepend.bat">
    <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
    <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
    <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
@@ -69,9 +68,25 @@
   </exec>
  </target>
 
+<target name="phpunit" description="Run unit tests with PHPUnit">
+  <exec executable="${basedir}/vendor/bin/phpunit.bat" failonerror="true"/>
+ </target>
+
+ <target name="phpcpd" description="Find duplicate code using PHPCPD">
+  <exec executable="${basedir}/vendor/bin/phpcpd.bat">
+   <arg value="--log-pmd" />
+   <arg value="${basedir}/build/logs/pmd-cpd.xml" />
+   <arg path="${basedir}/src" />
+  </exec>
+ </target>
+
+ <target name="phpdox" description="Generate API documentation using phpDox">
+  <exec executable="${basedir}/vendor/bin/phpdox.bat"/>
+ </target>
+
  <target name="phpmd"
          description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
-  <exec executable="cmd">
+  <exec executable="${basedir}/vendor/bin/phpmd.bat">
    <arg path="${basedir}/src" />
    <arg value="text" />
    <arg value="${basedir}/build/phpmd.xml" />
@@ -79,7 +94,7 @@
  </target>
 
  <target name="phpmd-ci" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
-  <exec executable="cmd">
+  <exec executable="${basedir}/vendor/bin/phpmd.bat">
    <arg path="${basedir}/src" />
    <arg value="xml" />
    <arg value="${basedir}/build/phpmd.xml" />
@@ -90,14 +105,14 @@
 
  <target name="phpcs"
          description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-  <exec executable="cmd">
+  <exec executable="${basedir}/vendor/bin/phpcs.bat">
    <arg value="--standard=${basedir}/build/phpcs.xml" />
    <arg path="${basedir}/src" />
   </exec>
  </target>
 
  <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-  <exec executable="cmd">
+  <exec executable="${basedir}/vendor/bin/phpcs.bat" output="./dev">
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=${basedir}/build/phpcs.xml" />
@@ -105,19 +120,4 @@
   </exec>
  </target>
 
- <target name="phpcpd" description="Find duplicate code using PHPCPD">
-  <exec executable="cmd">
-   <arg value="--log-pmd" />
-   <arg value="${basedir}/build/logs/pmd-cpd.xml" />
-   <arg path="${basedir}/src" />
-  </exec>
- </target>
-
- <target name="phpdox" description="Generate API documentation using phpDox">
-  <exec executable="cmd"/>
- </target>
-
- <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="cmd" failonerror="true"/>
- </target>
 </project>

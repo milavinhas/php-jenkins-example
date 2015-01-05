@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src#" full="Calculadora" namespace="" name="Calculadora" abstract="false" final="false" start="8" end="65">
+  <file path="src" file="calculadora.php" realpath="C:/xampp/htdocs/php-jenkins-example/src/calculadora.php" size="1084" time="2015-01-04T03:00:44+01:00" unixtime="1420336844" sha1="d8e60256318641c6b6cb9b3fa2dd72354a1f8a62"/>
+  <docblock>
+    <description compact="Clase calculadora que permite realizar varias operaciones matemáticas simples"/>
+    <author value="Miguel Ángel"/>
+  </docblock>
+  <method name="sumar" start="16" end="18" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Realiza la suma de dos números"/>
+      <param type="object" variable="$a">
+        <type full="number" namespace="" name="number"/>
+      </param>
+      <param type="object" variable="$b">
+        <type full="number" namespace="" name="number"/>
+      </param>
+      <return type="object">
+        <type full="number" namespace="" name="number"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="restar" start="27" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Realiza la resta de dos números"/>
+      <param type="object" variable="$a">
+        <type full="number" namespace="" name="number"/>
+      </param>
+      <param type="object" variable="$b">
+        <type full="number" namespace="" name="number"/>
+      </param>
+      <return type="object">
+        <type full="number" namespace="" name="number"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="multiplicar" start="38" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Realiza la multiplicación de dos números"/>
+      <param type="object" variable="$a">
+        <type full="number" namespace="" name="number"/>
+      </param>
+      <param type="object" variable="$b">
+        <type full="number" namespace="" name="number"/>
+      </param>
+      <return type="object">
+        <type full="number" namespace="" name="number"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dividir" start="49" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Realiza la división de dos números"/>
+      <param type="object" variable="$a">
+        <type full="number" namespace="" name="number"/>
+      </param>
+      <param type="object" variable="$b">
+        <type full="number" namespace="" name="number"/>
+      </param>
+      <return type="object">
+        <type full="number" namespace="" name="number"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="factorial" start="58" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calcula el factorial de un número"/>
+      <param type="object" variable="$a">
+        <type full="number" namespace="" name="number"/>
+      </param>
+      <return type="object">
+        <type full="number" namespace="" name="number"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+</class>

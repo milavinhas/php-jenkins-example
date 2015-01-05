@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src#">
+  <namespace name="">
+    <class name="Calculadora" src="src/calculadora.php" description="Clase calculadora que permite realizar varias operaciones matemáticas simples" xml="classes/Calculadora.xml"/>
+  </namespace>
+</index>
