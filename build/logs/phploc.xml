@@ -27,9 +27,6 @@
   <testClasses>0</testClasses>
   <testMethods>0</testMethods>
   <ccnByLloc>0.14285714285714</ccnByLloc>
-  <ccnByNom>1.2</ccnByNom>
-  <llocByNoc>6</llocByNoc>
-  <llocByNom>1.2</llocByNom>
   <llocByNof>0</llocByNof>
   <methodCalls>1</methodCalls>
   <staticMethodCalls>0</staticMethodCalls>
@@ -41,6 +38,18 @@
   <globalVariableAccesses>0</globalVariableAccesses>
   <superGlobalVariableAccesses>0</superGlobalVariableAccesses>
   <globalConstantAccesses>0</globalConstantAccesses>
+  <methodCcnMin>1</methodCcnMin>
+  <methodCcnAvg>1.2</methodCcnAvg>
+  <methodCcnMax>2</methodCcnMax>
+  <methodLlocMin>1</methodLlocMin>
+  <methodLlocAvg>1.2</methodLlocAvg>
+  <methodLlocMax>2</methodLlocMax>
   <namespaces>0</namespaces>
   <ncloc>32</ncloc>
+  <classCcnMin>2</classCcnMin>
+  <classCcnAvg>2</classCcnAvg>
+  <classCcnMax>2</classCcnMax>
+  <classLlocMin>6</classLlocMin>
+  <classLlocAvg>6</classLlocAvg>
+  <classLlocMax>6</classLlocMax>
 </phploc>
